@@ -1,30 +1,10 @@
 #!/usr/bin/env node
 import fs from 'fs';
 import path from 'path';
-import { execSync } from 'child_process';
 import readline from 'readline';
 import trash from 'trash';
 import { program } from 'commander';
-
-function escapeShellArg(arg) {
-    return `'${arg.replace(/'/g, "'\\''")}'`;
-}
-
-function getTaggedFiles(folderPath, tag) {
-    const files = fs.readdirSync(folderPath);
-    return files.filter((file) => {
-        const filePath = path.join(folderPath, file);
-        try {
-            const escapedPath = escapeShellArg(filePath);
-            const result = execSync(`mdls -name kMDItemUserTags ${escapedPath}`, { encoding: 'utf8' });
-            return result.includes(tag);
-        } catch (error) {
-            console.error(error);
-            // Skip files that cause errors (e.g., not valid for mdls)
-            return false;
-        }
-    });
-}
+import { getTaggedFiles } from '../mjs-lib/finder-util.mjs';
 
 function promptUser(question) {
     const rl = readline.createInterface({
