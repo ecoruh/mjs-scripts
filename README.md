@@ -1,4 +1,3 @@
-# photo-mjs
 
 Photography workflow NodeJS utilities.
 
