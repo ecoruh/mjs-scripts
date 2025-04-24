@@ -1,0 +1,38 @@
+{
+  "name": "photo-mjs",
+  "version": "1.0.0",
+  "description": "A collection of NodeJS untilities for photography applications",
+  "keywords": [
+    "photography",
+    "workflow",
+    "utilities"
+  ],
+  "homepage": "https://github.com/ecoruh/photo-mjs#readme",
+  "bugs": {
+    "url": "https://github.com/ecoruh/photo-mjs/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ecoruh/photo-mjs.git"
+  },
+  "license": "ISC",
+  "author": "Ergun Çoruh",
+  "private": true,
+  "workspaces": [
+    "scripts/*"
+  ],
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "lint": "npm run lint --workspaces --if-present",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
+  },
+  "devDependencies": {
+    "eslint": "^9.25.0",
+    "vitest": "^3.1.2"
+  },
+  "dependencies": {
+    "commander": "^13.1.0"
+  }
+}

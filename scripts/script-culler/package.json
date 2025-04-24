@@ -1,0 +1,25 @@
+{
+  "name": "script-culler",
+  "version": "1.0.0",
+  "description": "Script to cull poor image files based on Finder tags on Mac",
+  "keywords": [
+    "culling",
+    "photography",
+    "editing"
+  ],
+  "license": "ISC",
+  "author": "Ergun Çoruh",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "script-culler": "./script-culler.mjs"
+  },
+  "main": "script-culler.mjs",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "trash": "^9.0.0"
+  }
+}
