@@ -52,8 +52,8 @@ But that can be changed via command line options (see --help)
 `;
 
 
-let params = {};
 async function processOptions() {
+    let params;
     program
         .name('script-culler')
         .description(`${description}`)
@@ -70,11 +70,12 @@ async function processOptions() {
         });
 
     program.parse();
+    return params;
 }
 
 async function main() {
 
-    await processOptions();
+    const params = await processOptions();
     console.log('Captured: ', params);
 
     const folderPath = params.folder;
