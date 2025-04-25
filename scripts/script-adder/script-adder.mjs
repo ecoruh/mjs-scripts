@@ -16,8 +16,8 @@ export function add(a, b) {
     return Number(a + b);
 }
 
-let params = {};
 async function processOptions() {
+    let params;
     program
         .name('script-adder')
         .description(`Boiler plate calculator app to add two numbers`)
@@ -38,11 +38,12 @@ async function processOptions() {
         });
 
     program.parse();
+    return params;
 }
 
 async function main() {
 
-    await processOptions();
+    const params = await processOptions();
     console.log(`${params.salutation} ${params.name}`);
     const result = add (params.one, params.two);
     if (params.verbose) {
