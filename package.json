@@ -1,7 +1,7 @@
 {
-  "name": "photo-mjs",
+  "name": "mjs-scripts",
   "version": "1.0.0",
-  "description": "A collection of NodeJS untilities for photography applications",
+  "description": "A collection of NodeJS scripts organised as npm workspaces",
   "keywords": [
     "photography",
     "workflow",
@@ -24,6 +24,7 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
+    "deploy": "~/dev/mjs-scripts/deploy.sh",
     "lint": "npm run lint --workspaces --if-present",
     "test": "vitest",
     "coverage": "vitest run --coverage"
