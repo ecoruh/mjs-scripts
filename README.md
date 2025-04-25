@@ -38,7 +38,7 @@ npm install
 
 ### Running Scripts Accross Workspaces
 
-#### From the root directory:
+#### From the root directory
 
 * To run the lint script defined in all workspace packages that have it:
 

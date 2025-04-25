@@ -1,4 +1,3 @@
-// scripts/script-a/script-a.test.mjs
 import { describe, it, expect, vi} from 'vitest';
 
 import fs from 'fs';

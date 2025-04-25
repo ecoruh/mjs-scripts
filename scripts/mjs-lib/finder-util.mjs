@@ -8,9 +8,9 @@ function escapeShellArg(arg) {
 
 /**
  * Given a folder returns a list of files tagged by a Finder tag.
- * @param {*} folderPath The folder to scan files
- * @param {*} tag A finder tag to search (g. 'Green')
- * @returns A list of tagged files
+ * @param {string} folderPath - The folder to scan files
+ * @param {string} tag - A Finder tag to search (g. 'Green')
+ * @returns {[string]} A list of tagged files
  */
 export function getTaggedFiles(folderPath, tag) {
   const files = fs.readdirSync(folderPath);

@@ -1,0 +1,16 @@
+{
+  "name": "script-adder",
+  "version": "1.0.0",
+  "description": "Boiler plate adder",
+  "keywords": [
+    "calculator",
+    "add"
+  ],
+  "license": "ISC",
+  "author": "Ergun Çoruh",
+  "type": "module",
+  "main": "script-adder.mjs",
+  "scripts": {
+    "test": "vitest"
+  }
+}
