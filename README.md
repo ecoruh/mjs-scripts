@@ -36,6 +36,8 @@ npm install
 * npm will read the root `package.json` and the `package.json` inside each directory listed in the workspaces array (`scripts/script-a`, `scripts/script-b`, etc.).
 * It will install all dependencies, hoisting shared ones to the root `node_modules` directory and placing package-specific ones inside the respective `scripts/package-name/node_modules` directory only if necessary (e.g., due to version conflicts).
 
+## Run
+
 ### Running Scripts Accross Workspaces
 
 #### From the root directory
@@ -64,15 +66,13 @@ npm exec --ws -- <command>
 npm exec --ws -- node -v
 ```
 
-### Converting script to a command
+### Converting Scripts to Commands
 
 `npm Workspaces` manages the dependencies within your repository.
 
 For  having direct commands like `script-a`, create the symlinks from a directory in your `$PATH` (like `/usr/local/bin`) to the actual executable `.mjs` file.
 
 Production quality scripts must be deployed to `~/Scripts/mjs-scripts`. This is done through the use of command `npm deploy`.
-
-### To create an executable command from a script
 
 ```bash
 # From the root folder refresh node_modules
@@ -84,3 +84,9 @@ npm run deploy script-a
 # Test your script command
 script-a --help
 ```
+
+## Documentation
+
+This README file and the sample script `script-adder` is all you need to study to create similar scripts.
+
+Happy scripting!
