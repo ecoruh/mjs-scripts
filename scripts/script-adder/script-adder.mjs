@@ -1,4 +1,9 @@
 #!/usr/bin/env node
+
+////////////////////////////////////////////////////////////
+// DO NOT EDIT, MEANT TO BE EXAMPLE, SIMPLY COPY AND EDIT //
+////////////////////////////////////////////////////////////
+
 import { program } from 'commander';
 
 /**
@@ -17,8 +22,8 @@ async function processOptions() {
         .name('script-adder')
         .description(`Boiler plate calculator app to add two numbers`)
         .version('1.0.0')
-        .argument('<salutation>', 'An argument')
-        .option('-v, --verbose', 'Verbose mode')
+        .argument('<salutation>', 'A mandatory salutation argument')
+        .option('-v, --verbose', 'Verbose mode, try it')
         .option('-n, --name <string>', 'Your name', 'Fred')
         .requiredOption('-o, --one <number>', 'The first operand', parseInt)
         .requiredOption('-t, --two <number>', 'The second operand', parseInt)
@@ -38,9 +43,9 @@ async function processOptions() {
 async function main() {
 
     await processOptions();
+    console.log(`${params.salutation} ${params.name}`);
     const result = add (params.one, params.two);
     if (params.verbose) {
-        console.log(`${params.salutation} ${params.name}`);
         console.log('Calculated adding numbers as follows:');
         if (params.verbose) {
             process.stdout.write(`${params.one} + ${params.two} = `);
