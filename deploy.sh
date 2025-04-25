@@ -13,9 +13,6 @@ SCRIPTS_PATH="${PWD}/scripts"
 SCRIPT_FILE_PATH="$SCRIPTS_PATH/$SCRIPT/$SCRIPT_FILE"
 TARGET_PATH=~"/Scripts/mjs-scripts"
 
-# echo $SCRIPT_PATH
-# ls -alt "$SCRIPT_PATH"
-
 echo "DEPLOYMENT WILL BEGIN\n"
 echo -n "Press any key to continue, CTRL-C to exit now ...\n"
 read -n 1
