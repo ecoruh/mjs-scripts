@@ -7,13 +7,13 @@
     "workflow",
     "utilities"
   ],
-  "homepage": "https://github.com/ecoruh/photo-mjs#readme",
+  "homepage": "https://github.com/ecoruh/mjs-scripts#readme",
   "bugs": {
-    "url": "https://github.com/ecoruh/photo-mjs/issues"
+    "url": "https://github.com/ecoruh/mjs-scripts/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ecoruh/photo-mjs.git"
+    "url": "git+https://github.com/ecoruh/mjs-scripts.git"
   },
   "license": "ISC",
   "author": "Ergun Çoruh",
