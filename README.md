@@ -87,6 +87,6 @@ script-a --help
 
 ## Documentation
 
-This README file and the sample script `script-adder` is all you need to study to create similar scripts.
+This README file and the sample script `script-adder` is all you need to study and create similar scripts.
 
 Happy scripting!
