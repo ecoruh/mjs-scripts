@@ -1,10 +1,10 @@
 # mjs-scripts
 
-Author: Ergun Çoruh
+Author: Ergun Çoruh, 2025
 
 ## Summary
 
-The scripts provided in this repository are meant to facilitate everyday tasks in homegrown projects, for example photography workflow automation.
+The scripts provided in this repository are meant to facilitate everyday tasks in homegrown projects, for example photography workflow automation, archiving, and so on.
 
 This repository is organised as [npm workspaces](https://docs.npmjs.com/cli/v8/using-npm/workspaces) for efficient resource management of multiple scripts.
 
@@ -18,11 +18,11 @@ This repository is organised as [npm workspaces](https://docs.npmjs.com/cli/v8/u
 * All scripts must use NodeJS runtime.
 * Each script can optionally be converted to a MacOS command and run from anywhere.
 * All scripts must conform to [ECMAScript module system](https://nodejs.org/docs/latest/api/esm.html). Therefore they all must have `.mjs` file extension.
-  * They must be small and confined to a single script.
+  * They must be small and confined to a single main module.
   * They must have `#!/usr/bin/env node` as the 1st line of the script.
   * The script must begin with `script-` prefix.
   * They must be stored under the `scripts` folder.
-  * They must use `commander` command line parser for consistency. This package is installed at root which is shared across all scripts.
+  * They must use `commander` command line parser for consistency. For conveneince this package is installed at root which is shared across all scripts.
 
 ## Build
 
@@ -33,8 +33,50 @@ This repository is organised as [npm workspaces](https://docs.npmjs.com/cli/v8/u
 npm install
 ```
 
-* npm will read the root `package.json` and the `package.json` inside each directory listed in the workspaces array (`scripts/script-a`, `scripts/script-b`, etc.).
+* `npm` will read the root `package.json` and the `package.json` inside each directory listed in the workspaces array (`scripts/script-a`, `scripts/script-b`, etc.).
 * It will install all dependencies, hoisting shared ones to the root `node_modules` directory and placing package-specific ones inside the respective `scripts/package-name/node_modules` directory only if necessary (e.g., due to version conflicts).
+
+## Folder Structure
+
+### Development
+
+```bash
+mjs-scripts/
+├── node_modules/
+├── package.json
+├── scripts/
+│   ├── .mjs-config/
+|       └── script-a.json
+│   ├── mjs-lib/
+│   ├── script-a/
+|       └── script-a.mjs
+|       └── script-a.test.mjs
+│   ├── script-b/
+|   ...
+│
+└── README.md
+```
+
+Notes:
+
+1. Test modules are optional. To test, run `npm test`.
+2. Configurations are optional. They can be useful when cli options are tedious to type. Configurations are stored like `.mjs-config/script-a.json`. Each key in a configuration file corresponds to a profile name that can be specified through `--profile` cli option. Configurations must be validated in code using `zod` package. When present cli options will override configuration ones. See `script-sd-import` as an example use of configurations and profiles.
+
+### Production
+
+Using the shell script `deploy.sh` each tested script can be copied to a production area. Deploy script assumes the production root folder is `~/scripts`, ie. you should manually create it if it doesn't exist. Via `deploy.sh` symbolic links to copied scripts are created in `/usr/local/bin` so that they can be invoked as stand-alone Terminal commands from anywhere.
+
+```bash
+~scripts/
+├── mjs-scripts/
+    ├── node_modules/
+    ├── scripts/
+    │   ├── .mjs-config/
+    │   ├── mjs-lib/
+    │   ├── script-a/
+    |       └── script-a.mjs
+    |   ...
+ ```
 
 ## Run
 

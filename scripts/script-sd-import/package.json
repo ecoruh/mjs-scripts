@@ -1,0 +1,19 @@
+{
+  "name": "script-sd-import",
+  "version": "1.0.0",
+  "description": "Import photos from an SD card to local storage partitioned by year then date",
+  "keywords": [
+    "photography",
+    "sdcard",
+    "sd",
+    "import",
+    "archive"
+  ],
+  "license": "ISC",
+  "author": "Ergun Çoruh",
+  "type": "module",
+  "main": "script-sd-import.mjs",
+  "scripts": {
+    "test": "vitest"
+  }
+}

@@ -17,14 +17,14 @@ export function add(a, b) {
 }
 
 async function processOptions() {
-    let params;
+    let _options;
     program
         .name('script-adder')
         .description(`Boiler plate calculator app to add two numbers`)
         .version('1.0.0')
         .argument('<salutation>', 'A mandatory salutation argument')
         .option('-v, --verbose', 'Verbose mode, try it')
-        .option('-n, --name <string>', 'Your name', 'Fred')
+        .option('-n, --name <string>', 'Your name', 'there')
         .requiredOption('-o, --one <number>', 'The first operand', parseInt)
         .requiredOption('-t, --two <number>', 'The second operand', parseInt)
         .action((salutation, options) => {
@@ -34,22 +34,22 @@ async function processOptions() {
                 console.log('Operand 1: ', options.one);
                 console.log('Operand 2: ', options.two);
             }
-            params = {salutation, ...options};
+            _options = {salutation, ...options};
         });
 
     program.parse();
-    return params;
+    return _options;
 }
 
 async function main() {
 
-    const params = await processOptions();
-    console.log(`${params.salutation} ${params.name}`);
-    const result = add (params.one, params.two);
-    if (params.verbose) {
+    const options = await processOptions();
+    console.log(`${options.salutation} ${options.name}`);
+    const result = add (options.one, options.two);
+    if (options.verbose) {
         console.log('Calculated adding numbers as follows:');
-        if (params.verbose) {
-            process.stdout.write(`${params.one} + ${params.two} = `);
+        if (options.verbose) {
+            process.stdout.write(`${options.one} + ${options.two} = `);
         }
     }
     console.log(result);
