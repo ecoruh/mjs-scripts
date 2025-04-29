@@ -40,42 +40,44 @@ npm install
 
 ### Development
 
-```bash
+```text
 mjs-scripts/
 ├── node_modules/
 ├── package.json
 ├── scripts/
-│   ├── .mjs-config/
-|       └── script-a.json
-│   ├── mjs-lib/
-│   ├── script-a/
-|       └── script-a.mjs
-|       └── script-a.test.mjs
-│   ├── script-b/
-|   ...
-│
-└── README.md
+    ├── .mjs-config/
+        └── [script-a.json]
+    ├── mjs-lib/
+    ├── script-a/
+        └── package.json
+        └── script-a.mjs
+        └── script-a.test.mjs
+    ├── script-b/
+    ...
+
 ```
 
 Notes:
 
-1. Test modules are optional. To test, run `npm test`.
-2. Configurations are optional. They can be useful when cli options are tedious to type. Configurations are stored like `.mjs-config/script-a.json`. Each key in a configuration file corresponds to a profile name that can be specified through `--profile` cli option. Configurations must be validated in code using `zod` package. When present cli options will override configuration ones. See `script-sd-import` as an example use of configurations and profiles.
+1. Test modules (eg. `script-a.test.mjs`) are optional. To test, run `npm test`.
+2. Configurations are optional. They can be useful when cli options are tedious to type. When present configurations must be stored like `.mjs-config/script-a.json`. Each key in a configuration file corresponds to a profile name that can be specified through `--profile` cli option. Configurations must be validated in code using `zod` package. When present cli options will override configuration ones. See `script-sd-import` as an example use of configurations and profiles.
 
 ### Production
 
 Using the shell script `deploy.sh` each tested script can be copied to a production area. Deploy script assumes the production root folder is `~/scripts`, ie. you should manually create it if it doesn't exist. Via `deploy.sh` symbolic links to copied scripts are created in `/usr/local/bin` so that they can be invoked as stand-alone Terminal commands from anywhere.
 
-```bash
+```text
 ~scripts/
 ├── mjs-scripts/
     ├── node_modules/
     ├── scripts/
-    │   ├── .mjs-config/
-    │   ├── mjs-lib/
-    │   ├── script-a/
-    |       └── script-a.mjs
-    |   ...
+        ├── .mjs-config/
+        └── [script-a.json]
+        ├── mjs-lib/
+        ├── script-a/
+            └── script-a.mjs
+        ├── script-b/
+        ...
  ```
 
 ## Run
