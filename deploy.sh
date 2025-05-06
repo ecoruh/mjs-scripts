@@ -1,4 +1,6 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
+set -e
+
 if [ -n "$1" ] && [ -d "scripts/$1" ] && [ -f "scripts/$1/$1.mjs" ]; then
   echo "RECOGNISED SCRIPT $1"
 else

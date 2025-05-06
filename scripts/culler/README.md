@@ -1,7 +1,7 @@
-# script-culler
+# culler
 
 ```text
-Usage: script-culler [options] <folder>
+Usage: culler [options] <folder>
 
 Script to cull image files imported from a camera based on a Mac Finder tag.
 This allows large number of poor image files culled after previewing on Finder.

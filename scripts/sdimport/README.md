@@ -1,7 +1,7 @@
-# script-sd-import
+# sd-import
 
 ```text
-Usage: script-sd-import [options]
+Usage: sd-import [options]
 
 Import all photos from an SD card to local storage partitioned by year then date.
 

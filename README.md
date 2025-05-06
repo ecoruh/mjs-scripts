@@ -20,7 +20,7 @@ This repository is organised as [npm workspaces](https://docs.npmjs.com/cli/v8/u
 * All scripts must conform to [ECMAScript module system](https://nodejs.org/docs/latest/api/esm.html). Therefore they all must have `.mjs` file extension.
   * They must be small and confined to a single main module.
   * They must have `#!/usr/bin/env node` as the 1st line of the script.
-  * The script must begin with `script-` prefix.
+  * The script must have a all lowercase name (eg. 'culler', 'sdimport', ..)
   * They must be stored under the `scripts` folder.
   * They must use `commander` command line parser for consistency. For conveneince this package is installed at root which is shared across all scripts.
 
@@ -131,6 +131,6 @@ script-a --help
 
 ## Documentation
 
-This README file and the sample script `script-adder` is all you need to study and create similar scripts.
+This README file and the sample script `adder` is all you need to study and create similar scripts.
 
 Happy scripting!

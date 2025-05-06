@@ -1,7 +1,7 @@
-# script-adder
+# adder
 
 ```text
-Usage: script-adder [options] <salutation>
+Usage: adder [options] <salutation>
 
 Boiler plate calculator app to add two numbers
 

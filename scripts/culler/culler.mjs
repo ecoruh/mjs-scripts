@@ -55,7 +55,7 @@ But that can be changed via command line options (see --help)
 async function processOptions() {
     let params;
     program
-        .name('script-culler')
+        .name('culler')
         .description(`${description}`)
         .version('1.0.0')
         .argument('<folder>', 'Path to the image folder')

@@ -81,7 +81,7 @@ NOTE: Edit "scripts/.mjs-config/script-sd-import.json" to change or extend your
 
 async function processOptions() {
     program
-        .name('script-sd-import')
+        .name('sdimport')
         .description(`${description}`)
         .version('1.0.0')
         .option('-d, --dryrun', 'Non-destructive run, listing files only', false)
